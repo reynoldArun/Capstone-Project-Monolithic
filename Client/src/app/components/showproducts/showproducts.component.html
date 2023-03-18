@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<section class="showproduct">
+    <div class="backtodashboard d-flex-jc-sa">
+        <h1 routerLink="/admin/dashboard">Back to Dashboard</h1>
+        <h1>List of All Products</h1>
+    </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>delete</th>
+            <th>update</th>
+        </tr>
+        <tr *ngFor="let product of data; let i = index">
+            <td>{{product.id}}</td>
+            <td>{{product.productName}}</td>
+            <td>{{product.img}}</td>
+            <td>{{product.category}}</td>
+            <td>Rs {{product.amount}}</td>
+            <td><button class="primary-btn" (click)="delete(product.id, i)">Delete</button></td>
+            <td><button class="primary-btn" routerLink="/admin/dashboard/updateproduct/{{product.id}}">Update</button></td>
+        </tr>
+    </table>
+</section>

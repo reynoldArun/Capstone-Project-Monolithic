@@ -1,1 +1,262 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+
+:root {
+    --primary-border: 5px solid #FFA700;
+    --secondary-border: 1px solid black;
+    --bg-white-color: #FFFFFF;
+    --bg-light-color: #E7F3F1;
+    --bg-green-color: #10847E;
+    --yellow-color: #FFA700;
+    --s-shadow: 3px 3px 3px grey;
+    --p-shadow: 5px 5px 5px grey;
+    --p-weight: 900;
+    --p-weight-small: 300;
+    --p-weight-med: 600;
+    --p-color: whitesmoke;
+}
+
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--bg-light-color);
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    
+}
+
+/* helper css */
+
+.d-flex-jc-sa {
+    display: flex;
+    justify-content: space-around;
+}
+
+.d-flex-jc-sa-c {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.d-flex-jc-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.d-flex-jc-sb-c {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.primary-btn {
+    background-color: #FFA700;
+    border: none;
+    font-weight: 900;
+    height: 2rem;
+    width: 5rem;
+}
+
+.secondary-btn {
+    background-color: #FFA700;
+    border: none;
+    font-weight: 900;
+    height: 2rem;
+    width: 8rem;
+    color: white;
+    box-shadow: var(--s-shadow);
+}
+
+.primary-input>input {
+    width: 9.375rem;
+    height: 25px;
+}
+
+.error-color {
+    color: indianred;
+}
+
+
+
+/* admin register login */
+.register,
+.login,
+.admin {
+    height: 80vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+}
+
+.register__container,
+.login__container,
+.admin__container {
+    width: 25rem;
+    height: 25rem;
+    border: var(--primary-border);
+    background-color: var(--bg-white-color);
+    margin: auto;
+
+}
+
+.register__inputs,
+.login__inputs,
+.admin__inputs {
+    align-items: center;
+    height: 12.5rem;
+}
+
+.register__inputs>input,
+.login__inputs>input,
+.admin__inputs>input {
+    width: 9.375rem;
+    height: 25px;
+    align-items: center;
+}
+
+.register__footer>a,
+.login__footer>a,
+.admin__footer>a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* showproducts showuser */
+.showproduct,
+.showusers {
+    background: var(--bg-light-color);
+    height: 100vh;
+
+}
+
+.showproduct>h1,
+.showusers>h1 {
+    text-align: center;
+    padding-top: 1.25rem;
+    font-size: 2.5rem;
+}
+
+.showproduct>table,
+.showusers>table {
+    margin: 1.875rem auto;
+    width: 75rem;
+    text-align: center;
+    border: var(--secondary-border);
+    background-color: var(--bg-white-color);
+    box-shadow: 0 1.5rem 2.5rem -.5rem rgba(#000000, .1);
+}
+
+.showproduct>table>tr>th,
+.showusers>table>tr>th {
+    border: var(--secondary-border);
+    height: 2.8125rem;
+}
+
+.showproduct>table>tr>td,
+.showusers>table>tr>td {
+    border: var(--secondary-border);
+    height: 2.5rem;
+}
+
+.backtodashboard {
+    align-items: center;
+    margin: auto;
+}
+
+.backtodashboard>h1:first-child {
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* create user create product */
+.usercreate,
+.productcreate,
+.admincreate {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 50px auto;
+    height: 100vh;
+    background: var(--bg-light-color);
+
+}
+
+.usercreate__left,
+.productcreate__left,
+.admincreate__left {
+    border: var(--primary-border);
+    width: 100%;
+    background-color: var(--bg-white-color);
+    height: fit-content;
+}
+
+.usercreate__right,
+.productcreate__right,
+.admincreate__right {
+    margin-top: 2rem;
+    height: fit-content;
+    align-items: center;
+    height: 18.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+.usercreate__left>img,
+.productcreate__left>img,
+.admincreate__left>img {
+    width: inherit;
+    height: inherit;
+
+}
+
+.usercreate__right>input,
+.productcreate__right>input,
+.admincreate__right>input {
+    width: 9.375rem;
+    height: 25px;
+}
+
+
+@media screen and (min-width: 699px) {
+
+    .usercreate,
+    .productcreate,
+    .admincreate {
+        grid-template-columns: 1fr 1fr;
+
+    }
+}
+
+/* update user update product */
+.updateuser, .updateproduct {
+    text-align: center;
+    margin: 200px auto;
+}
+
+.updateuser > form, .updateproduct >form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}

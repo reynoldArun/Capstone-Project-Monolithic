@@ -1,0 +1,36 @@
+<app-navbar [Length]="Length"></app-navbar>
+<app-messagebox [message]="message" *ngIf="showMessage"></app-messagebox>
+<section class="cart" *ngIf="carts.length <= 0">
+    <h2>Your Bag</h2>
+    <h4 class="cart__empty">is currently empty</h4>
+</section>
+<section class="cart" *ngIf="carts.length > 0">
+  <h2>Your Cart</h2>
+  <div>
+    <article class="cart__item" *ngFor="let cart of carts; let i = index">
+      <img src="" alt="" />
+      <div>
+        <h4>{{cart.product.productName}}</h4>
+        <h4 class="cart__item__price">Rs {{cart.product.amount}}</h4>
+        <button class="cart__remove__btn" (click)="deleteCart(cart.id, i)">remove</button>
+      </div>
+      <div>
+        <button class="cart__amount__btn" (click)="increase(cart, cart.id)">
+          <i class="fa-solid fa-plus"></i>  
+        </button>
+        <p class="cart__amount">{{cart.unit}}</p>
+        <button class="cart__amount__btn" (click)="decrease(cart, cart.id)" [disabled]="cart.unit == 1">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+      </div>
+    </article>
+  </div>
+  <div class="cart__end">
+    <hr />
+    <div class="cart__total">
+      <h4 class="d-flex-jc-sb">Total {{grandTotal}}</h4>
+    </div>
+    <button class="cart__btn">Checkout</button>
+  </div>
+</section>
+

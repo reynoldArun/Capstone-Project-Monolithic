@@ -1,0 +1,12 @@
+.message {
+    background-color: var(--bg-green-color);
+    font-size: 1rem;
+    color: var(--bg-white-color);
+    width: fit-content;
+    padding: 0.3125rem 1.25rem;
+    height: 2rem;
+    text-align: center;
+    margin: auto;
+    font-weight: var(--p-weight);
+    margin-top: 0.3125rem;
+}

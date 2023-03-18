@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<app-messagebox [message]="message" *ngIf="success"></app-messagebox>
+<section class="usercreate">
+    <div class="usercreate__left">
+        <img src="../../../assets/images/banner.jpg" alt="banner">
+    </div>
+    <div class="usercreate__right">
+        username<input type="text" name="username" [(ngModel)]="user.name" required #name="ngModel">
+        <br><span *ngIf="name.invalid && name.touched" class="error-color">Enter a valid Name</span>
+        Password<input type="password" name="password" [(ngModel)]="user.password" required #pass="ngModel">
+        <br><span *ngIf="pass.invalid && pass.touched" class="error-color">Enter a valid password</span>
+        Email<input type="email" name="userEmail" [(ngModel)]="user.email" required #email="ngModel">
+        <br><span *ngIf="email.invalid && email.touched" class="error-color">Enter a valid email</span>
+        Phone<input type="text" name="userPhone" [(ngModel)]="user.phoneNumber" required #pass="ngModel">
+        <br><span *ngIf="pass.invalid && pass.touched" class="error-color">Enter a valid Phone</span>
+        <button class="secondary-btn" (click)="CreateUser()">Create User</button>
+    </div>
+</section>

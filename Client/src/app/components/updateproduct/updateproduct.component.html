@@ -1,0 +1,12 @@
+<section class="updateproduct">
+    <form>
+     ProductName: <input type="text" name="name" [(ngModel)]="products.productName"><br>
+     Img: <input type="text" name="img" [(ngModel)]="products.img"><br>
+     Category: <input type="text" name="category" [(ngModel)]="products.category"><br>
+     quantity: <input type="text" name="quantity" [(ngModel)]="products.quantity"><br>
+     amount: <input type="text" name="amount" [(ngModel)]="products.amount"><br>
+     <button class="secondary-btn" (click)="updateProduct()">Update Product</button>
+    </form>
+ </section>
+ <app-messagebox *ngIf="error" [message]="message"></app-messagebox>
+ 

@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<app-messagebox [message]="message" *ngIf="errorMessage"></app-messagebox>
+<section class="register">
+    <div class="register__container d-flex-jc-sa-c">
+        <div class="register__title">
+            <h1>Register</h1>
+        </div>
+        <div class="register__inputs primary-input d-flex-jc-sb-c">
+            UserName<input type="text" [(ngModel)]="user.name" #name="ngModel" required>
+            <br><span class="error-color" *ngIf="name.invalid && name.touched">Enter a valid name</span>
+            Password<input type="password" [(ngModel)]="user.password" #password="ngModel" required>
+            <br><span class="error-color" *ngIf="password.invalid && password.touched">Enter a password</span>
+            Email<input type="email" [(ngModel)]="user.email" required #email="ngModel" required>
+            <br><span class="error-color" *ngIf="email.invalid && email.touched">Enter a valid email</span>
+            PhoneNumber<input type="text" placeholder="+91" [(ngModel)]="user.phoneNumber" #phone="ngModel" required>
+            <br><span class="error-color" *ngIf="phone.invalid && phone.touched">Enter a valid number</span>
+            <button class="primary-btn" (click)="register()">Register</button>
+        </div>
+        <div class="register__footer">
+            <p>Already Registered? - <a routerLink="/account/login">Login</a></p>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,86 @@
+.dashboard {
+    text-align: center;
+    background: var(--bg-light-color);
+    height: 100vh;
+}
+
+.dashboard>h1 {
+    font-size: 4rem;
+}
+
+
+.dashlink {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 2.5rem;
+    row-gap: 20px;
+}
+
+.dashlink>a {
+    margin: 0px 1rem;
+    font-size: 2rem;
+}
+
+.card {
+    width: 15.625rem;
+    height: 18.75rem;
+    background-color: var(--bg-white-color);
+    box-shadow: 10px 10px 10px grey;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+
+hr {
+    width: 75%;
+    margin: 0px auto;
+}
+
+.card:hover {
+    background-color: var(--yellow-color);
+}
+
+.card__info>h1 {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+a {
+    all: unset;
+    font-size: 1rem;
+    font-weight: var(--p-weight);
+
+}
+
+@media screen and (min-width: 597px) {
+    .dashlink {
+        grid-template-columns: 1fr 1fr;
+        margin: 1.2rem auto;
+    }
+}
+
+@media screen and (min-width: 845px) {
+    .dashlink {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 1.2rem auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .dashlink {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 1.2rem auto;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .dashlink {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        margin: 1.2rem auto;
+    }
+}

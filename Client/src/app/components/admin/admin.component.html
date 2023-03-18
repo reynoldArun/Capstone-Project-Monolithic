@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<app-messagebox [message]="message" *ngIf="error"></app-messagebox>
+<section class="admin">
+    <div class="admin__container d-flex-jc-sa-c">
+        <div class="admin__title">
+            <h1>Admin</h1>
+        </div>
+        <div class="admin__inputs primary-input d-flex-jc-sb-c">
+            UserName<input type="text" name="adminUsername" [(ngModel)]="adminUsername" #username="ngModel" required />
+            <br /><span class="error-color" *ngIf="username.invalid && username.touched">Enter a valid username</span>
+            Password<input type="password" name="adminPass" [(ngModel)]="adminPass" required #pass="ngModel" />
+            <br /><span class="error-color" *ngIf="pass.invalid && pass.touched">Enter a valid password</span>
+            <button class="primary-btn" (click)="admin()">Login</button>
+        </div>
+        <div class="admin__footer">
+            <p><a routerLink="/account/login">Login as user</a></p>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

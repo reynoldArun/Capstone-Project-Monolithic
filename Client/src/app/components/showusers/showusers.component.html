@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<section class="showusers">
+    <div class="backtodashboard d-flex-jc-sa">
+        <h1 routerLink="/admin/dashboard">Back to Dashboard</h1>
+        <h1>List of All Users</h1>
+    </div>
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Delete</th>
+            <th>Update</th>   
+        </tr>
+        <tr *ngFor="let user of data; let i = index">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td><button class="primary-btn" (click)="delete(user.id, i)">Delete</button></td>
+            <td><button class="primary-btn" routerLink="/admin/dashboard/updateuser/{{user.id}}">update</button></td>
+        </tr>
+    </table>
+</section>

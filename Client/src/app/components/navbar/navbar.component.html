@@ -1,0 +1,18 @@
+<nav class="navbar d-flex-jc-sb-c">
+    <div class="logo">
+        <a routerLink="/home">
+            <img src="../../../assets/images/img2.png" alt="Logo">
+            <p>Medicare</p>
+        </a>
+    </div>
+    <div class="nav__inputs" *ngIf="isToDisabled">
+        <input type="text" placeholder="Search for medicine">
+    </div>
+    <div class="nav__links d-flex-jc-sb">
+        <a routerLink="/products">View Products</a>
+        <a routerLink="/admin/dashboard" *ngIf="isAdmin">Admin Dashboard</a>
+        <a (click)="Cart()"><i class="fa-solid fa-cart-shopping" [attr.value]="Length"></i> Cart </a>
+        <a routerLink="/account/login" *ngIf="isDisabled"><i class="fa-solid fa-user"></i> Sign in / Sign up</a>
+        <a (click)="logout()" *ngIf="logoutDisabled"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </div>
+</nav>

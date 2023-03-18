@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<app-messagebox [message]="message" *ngIf="showMessage"></app-messagebox>
+<section class="medicine">
+    <h1>View Medicines</h1>
+    <div class="medicine__container">
+        <div class="medicine__items" *ngFor="let product of products">
+            <img src="../../../assets/images/{{product.img}}.png" alt="product-img">
+            <div class="medicine__lower">
+                <h2>{{product.productName}}</h2>
+                <h3>&#8377; {{product.amount}}</h3>
+                <button class="medicine__btn" (click)="addToCart(product.id)">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+</section>

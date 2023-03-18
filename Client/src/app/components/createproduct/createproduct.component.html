@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<app-messagebox [message]="message" *ngIf="success"></app-messagebox>
+<section class="productcreate">
+    <div class="productcreate__left">
+        <img src="../../../assets/images/banner.jpg" alt="banner">
+    </div>
+    <div class="productcreate__right">
+        ProductName<input type="text" name="productname" [(ngModel)]="product.productName" required #name="ngModel">
+        <br><span *ngIf="name.invalid && name.touched" class="error-color">Enter a valid Product Name</span>
+        Image<input type="text" name="img" [(ngModel)]="product.img" required #img="ngModel">
+        <br><span *ngIf="img.invalid && img.touched" class="error-color">Enter a valid url</span>
+        Category<input type="text" name="category" [(ngModel)]="product.category" required #category="ngModel">
+        <br><span *ngIf="category.invalid && category.touched" class="error-color">Category is missing</span>
+        Amount<input type="text" name="amount" [(ngModel)]="product.amount" required #amount="ngModel">
+        <br><span *ngIf="amount.invalid && amount.touched" class="error-color">amount is missing</span>
+        Quantity<input type="text" name="quantity" [(ngModel)]="product.quantity" required #quantity="ngModel">
+        <br><span *ngIf="quantity.invalid && quantity.touched" class="error-color">Quantity is missing</span>
+        <button class="secondary-btn" (click)="CreateProduct()">Create Product</button>
+    </div>
+</section>

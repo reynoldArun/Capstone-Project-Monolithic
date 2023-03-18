@@ -1,0 +1,88 @@
+.navbar {
+    background: var(--bg-green-color);
+    padding: 0.625rem 1.25rem;
+    height: 8.75rem;
+    color: var(--bg-white-color);
+    font-weight: var(--p-weight-med);
+
+}
+
+.logo>a>img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.logo>a>p {
+    font-size: 0.45rem;
+}
+
+.nav__inputs {
+    width: 50%;
+    margin: auto;
+
+}
+
+.nav__inputs>input {
+    width: 100%;
+    height: 2.1875rem;
+    border-radius: 10px;
+    padding-left: 20px;
+
+}
+
+.fa-solid {
+    color: var(--bg-white-color);
+}
+
+.fa-cart-shopping:after {
+    content: attr(value);
+    font-size: 15px;
+    color: var(--bg-white-color);
+    background: var(--yellow-color);
+    border-radius: 50%;
+    padding: 0 5px;
+    position: relative;
+    left: -8px;
+    top: -10px;
+    opacity: 0.9;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 575px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        height: 5rem;
+    }
+
+    .nav__links {
+        align-items: center;
+    }
+
+    .nav__links>a {
+        margin: 0 1.25rem;
+    }
+
+    .nav__inputs {
+        width: 30%;
+    }
+
+    .logo>a>p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1111px) {
+    .nav__links>a {
+        margin: 0 1.8rem;
+    }
+
+    .nav__inputs {
+        width: 30%;
+    }
+
+}
