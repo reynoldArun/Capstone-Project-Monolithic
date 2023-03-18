@@ -9,9 +9,9 @@ export class UserServiceService {
   constructor(private http: HttpClient) { }
 
 
-  // (micro service - cors error need to fix it)
+  
   public CreateUser(user:any) {
-    return this.http.post("http://localhost:9001/add", user, {responseType: 'text' as 'json'})
+    return this.http.post("http://localhost:8080/user/add", user, {responseType: 'text' as 'json'})
   }
 
   public GetAllUser() {
@@ -19,14 +19,14 @@ export class UserServiceService {
   }
 
   public DeleteUser(id:any) {
-    return this.http.delete("http://localhost:9001/delete/"+id, {responseType: 'text' as 'json'})
+    return this.http.delete("http://localhost:8080/user/delete/"+id, {responseType: 'text' as 'json'})
   }
 
   public GetUserById(id:any) {
-    return this.http.get("http://localhost:9001/single/"+id)
+    return this.http.get("http://localhost:8080/user/single/"+id)
   }
 
   public UpdateUser(id:any, data:any) {
-    return this.http.put("http://localhost:9001/update/"+id, data, {responseType: 'text' as 'json'})
+    return this.http.put("http://localhost:8080/user/update/"+id, data, {responseType: 'text' as 'json'})
   }
 }

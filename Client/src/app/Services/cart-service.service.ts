@@ -13,11 +13,11 @@ export class CartServiceService {
   }
 
   DeleteCartItems(id:any) {
-    return this.http.delete("http://localhost:9003/delete/"+id, {responseType: 'text' as 'json'})
+    return this.http.delete("http://localhost:8080/cart/delete/"+id, {responseType: 'text' as 'json'})
   }
 
   public updateCart(cart:any, id:any) {
-    return this.http.put("http://localhost:9003/update/"+id, cart, {responseType: 'text' as 'json'});
+    return this.http.put("http://localhost:8080/cart/update/"+id, cart, {responseType: 'text' as 'json'});
   }
 
   public addToCart(mid:any, cid:any) {

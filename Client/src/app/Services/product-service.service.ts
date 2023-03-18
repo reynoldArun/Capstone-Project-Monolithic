@@ -12,25 +12,25 @@ export class ProductServiceService {
     return this.http.get<any>("http://localhost:8080/product/all")
   }
 
-  //(mircro service cors error)
+
   public DeleteProduct(id:any) {
-    return this.http.delete("http://localhost:9002/delete/"+id, {responseType: 'text' as 'json'})
+    return this.http.delete("http://localhost:8080/product/delete/"+id, {responseType: 'text' as 'json'})
   }
 
   public createProduct(medicine:any) {
-    return this.http.post("http://localhost:9002/add", medicine, {responseType: 'text' as 'json'})
+    return this.http.post("http://localhost:8080/product/add", medicine, {responseType: 'text' as 'json'})
   }
 
   public SearchProduct(name:any) {
-    return this.http.get("http://localhost:9002/search/"+name , {responseType: 'text' as 'json'})
+    return this.http.get("http://localhost:8080/product/search/"+name , {responseType: 'text' as 'json'})
   }
   
   public GetProductById(id:any) {
-    return this.http.get<any>("http://localhost:9002/single/"+id)
+    return this.http.get<any>("http://localhost:8080/product/single/"+id)
   }
 
   public UpdateProduct(id:any, data:any) {
-    return this.http.put("http://localhost:9002/update/"+id, data, {responseType: 'text' as 'json'})
+    return this.http.put("http://localhost:8080/product/update/"+id, data, {responseType: 'text' as 'json'})
   }
 
 }
