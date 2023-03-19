@@ -30,17 +30,17 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> DeleteUser(@PathVariable long id) {
+    public ResponseEntity<String> DeleteUser(@PathVariable String id) {
         return ResponseEntity.status(200).body(userService.DeleteUser(id));
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<String> UpdateUser(@PathVariable long id, @RequestBody UserDto userDto) {
+    public ResponseEntity<String> UpdateUser(@PathVariable String id, @RequestBody UserDto userDto) {
         return ResponseEntity.status(200).body(userService.UpdateUser(id, userDto));
     }
 
     @GetMapping("/single/{id}")
-    public ResponseEntity<User> GetUserById(@PathVariable long id) {
+    public ResponseEntity<User> GetUserById(@PathVariable String id) {
         return ResponseEntity.status(200).body(userService.GetUserByID(id));
     }
 

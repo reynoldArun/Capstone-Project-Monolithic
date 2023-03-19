@@ -12,7 +12,7 @@ import jakarta.validation.constraints.NotNull;
 @NoArgsConstructor
 public class UserDto {
 
-    private long id;
+    private String id;
 
     @NotNull(message = "Username cannot be empty")
     private String name;

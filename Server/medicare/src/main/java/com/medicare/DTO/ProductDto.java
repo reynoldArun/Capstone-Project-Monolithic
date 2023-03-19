@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDto {
-    private long id;
+    private String id;
     @NotNull(message = "Product Name cannot be empty")
     private String productName;
     @NotNull(message = "Add Valid Img url")

@@ -4,17 +4,16 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "product_table")
+@Document(collection = "product")
 public class Product {
     @Id
-    @GeneratedValue
-    private long id;
-    @Column(unique = true)
+    private String id;
+
     private String productName;
     private String img;
     private String category;

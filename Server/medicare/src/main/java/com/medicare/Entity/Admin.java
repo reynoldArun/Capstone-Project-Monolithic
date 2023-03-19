@@ -5,19 +5,18 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Entity
+@Document(collection = "admin")
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "admin_table")
 public class Admin {
     @Id
-    @GeneratedValue
-    private long id;
-    @Column(unique = true)
+    private String id;
     private String name;
     private String password;
-    @Column(unique = true)
+
     private String email;
 }

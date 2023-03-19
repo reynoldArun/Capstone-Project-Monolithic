@@ -29,7 +29,7 @@ public class CartController {
 
 
     @GetMapping("/add/{productId}/{userId}")
-    public ResponseEntity<Cart> addCart(@PathVariable long productId, @PathVariable long userId) {
+    public ResponseEntity<Cart> addCart(@PathVariable String productId, @PathVariable String userId) {
         Product newProduct = productService.GetProductById(productId);
         User newUser = userService.GetUserByID(userId);
         Cart newCart = new Cart(newUser, newProduct);
@@ -41,17 +41,17 @@ public class CartController {
 
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> DeleteCartItems(@PathVariable long id) {
+    public ResponseEntity<String> DeleteCartItems(@PathVariable String id) {
         return ResponseEntity.status(200).body(cartService.DeleteCartItems(id));
     }
 
     @GetMapping("/all/{id}")
-    public ResponseEntity<List<Cart>> GetAllCartItems(@PathVariable long id) {
+    public ResponseEntity<List<Cart>> GetAllCartItems(@PathVariable String id) {
         return ResponseEntity.status(200).body(cartService.getAllByUserCart(id));
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<String> UpdateCartItems(@RequestBody Cart cart, @PathVariable long id) {
+    public ResponseEntity<String> UpdateCartItems(@RequestBody Cart cart, @PathVariable String id) {
         return ResponseEntity.status(200).body(cartService.UpdateCartItems(cart, id));
     }
 }

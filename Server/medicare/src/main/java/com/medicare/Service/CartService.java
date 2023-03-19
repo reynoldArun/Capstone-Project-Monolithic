@@ -7,9 +7,9 @@ import java.util.List;
 public interface CartService {
     public Cart AddToCart(Cart cart);
 
-    public List<Cart> getAllByUserCart(long id);
+    public List<Cart> getAllByUserCart(String id);
 
-    public String DeleteCartItems(long id);
+    public String DeleteCartItems(String id);
 
-    public String UpdateCartItems(Cart cart, long id);
+    public String UpdateCartItems(Cart cart, String id);
 }

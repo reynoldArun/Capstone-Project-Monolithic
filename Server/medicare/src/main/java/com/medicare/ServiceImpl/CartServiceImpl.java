@@ -20,18 +20,18 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public List<Cart> getAllByUserCart(long id) {
+    public List<Cart> getAllByUserCart(String id) {
         return cartRepository.findAll();
     }
 
     @Override
-    public String DeleteCartItems(long id) {
+    public String DeleteCartItems(String id) {
         cartRepository.deleteById(id);
         return "Deleted Successfully!!";
     }
 
     @Override
-    public String UpdateCartItems(Cart cart, long id) {
+    public String UpdateCartItems(Cart cart, String id) {
         cartRepository.findById(id).get();
         Cart update;
         update = cart;

@@ -4,24 +4,18 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "cart_table")
+@Document(collection = "cart")
 public class Cart {
     @Id
-    @GeneratedValue
-    @Column(name="cart_id")
-    private long id;
+    private String id;
 
-    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
-    @ManyToOne()
-    @JoinColumn(name = "product_id")
     private Product product;
 
     private int unit;

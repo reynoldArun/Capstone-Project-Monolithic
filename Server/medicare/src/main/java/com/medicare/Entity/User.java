@@ -4,19 +4,17 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name= "user_table")
+@Document(collection = "user")
 public class User {
     @Id
-    @GeneratedValue
-    private long id;
-    @Column(unique = true)
+    private String id;
     private String name;
-    @Column(unique = true)
+
     private String email;
     private String password;
     private String phoneNumber;

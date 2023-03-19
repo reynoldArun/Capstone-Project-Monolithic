@@ -29,17 +29,17 @@ public class ProductController {
     }
 
     @GetMapping("single/{id}")
-    public ResponseEntity<Product> GetProductById(@PathVariable long id) {
+    public ResponseEntity<Product> GetProductById(@PathVariable String id) {
         return ResponseEntity.status(200).body(productService.GetProductById(id));
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> DeleteProduct(@PathVariable long id) {
+    public ResponseEntity<String> DeleteProduct(@PathVariable String id) {
         return ResponseEntity.status(200).body(productService.DeleteProduct(id));
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<String> UpdateProduct(@PathVariable long id, @RequestBody ProductDto productDto) {
+    public ResponseEntity<String> UpdateProduct(@PathVariable String id, @RequestBody ProductDto productDto) {
         return ResponseEntity.status(200).body(productService.UpdateProduct(id, productDto));
     }
 

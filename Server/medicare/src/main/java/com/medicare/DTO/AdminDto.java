@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AdminDto {
-    private long id;
+    private String id;
     @NotNull(message = "Admin name cannot be empty")
     private String name;
     private String password;
