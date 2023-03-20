@@ -4,7 +4,7 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:11
 ARG JAR_FILE=target/*.jar
-COPY  ./target/spring-medicine-app.jar spring-medicine-app.jar
+COPY --from=build /target/spring-medicine-app.jar spring-medicine-app.jar
 EXPOSE 8080
 
 ENTRYPOINT ["java","-jar","spring-medicine-app.jar"]
