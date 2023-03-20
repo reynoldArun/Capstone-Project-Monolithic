@@ -67,6 +67,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>spring-medicine-app</finalName>
 	</build>
 
 </project>
