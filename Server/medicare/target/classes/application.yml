@@ -1,0 +1,8 @@
+spring:
+  data:
+   mongodb:
+     uri: ${uri}
+     database: medicine
+
+
+
