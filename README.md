@@ -4,7 +4,8 @@ Simplilearn - Capstone-Project-Monolithic
 
 This is Capstone project for simplilearn using Monolithic.
 
-    Live Site URL: 
+Live Demo:
+https://funny-taffy-813309.netlify.app/home
 
 Built with
 
